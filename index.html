@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Midterm Exam</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <script src="js/jquery-2.1.1.min.js"></script>
+    <script src="https://cdn.firebase.com/js/client/2.3.2/firebase.js"></script>
+    <style>
+        .carousel-inner > .item > img,
+        .carousel-inner > .item > a > img {
+            width: 100%;
+            margin: auto;
+        }
+    </style>
+</head>
+<body>
+<nav class="navbar navbar-inverse">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#">iMovies</a>
+
+        </div>
+        <div class="collapse navbar-collapse" id="myNavbar">
+            <ul class="nav navbar-nav">
+                <li class="active"><a href="index.html">Home</a></li>
+                <li><a href="#">Browse Movies</a></li>
+                <li><a href="ticketreservation.html">Ticket Reservation</a></li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="signup.html"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+                <li><a href="login.html"><span class="glyphicon glyphicon-log-in"></span> Logout</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-lg-4">
+            <div class="row">
+                <!--<div class="col-md-6"></div>-->
+                <div class="col-md-12">
+                    <section class="panel">
+                        <div class="panel-body">
+                            <div id="myCarousel" class="carousel slide" data-ride="carousel">
+                                <!-- Indicators -->
+                                <ol class="carousel-indicators">
+                                    <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                                    <li data-target="#myCarousel" data-slide-to="1"></li>
+                                    <li data-target="#myCarousel" data-slide-to="2"></li>
+                                    <li data-target="#myCarousel" data-slide-to="3"></li>
+                                </ol>
+
+                                <!-- Wrapper for slides -->
+                                <div class="carousel-inner" role="listbox">
+                                    <div class="item active">
+                                        <img src="img/movie1.jpg" alt="Chania">
+                                    </div>
+
+                                    <div class="item">
+                                        <img src="img/movie2.jpg" alt="Chania">
+                                    </div>
+
+                                    <div class="item">
+                                        <img src="img/movie3.jpg" alt="Flower">
+                                    </div>
+
+                                    <div class="item">
+                                        <img src="img/movie4.jpg" alt="Flower">
+                                    </div>
+                                </div>
+
+                                <!-- Left and right controls -->
+                                <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+                                    <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+                                    <span class="sr-only">Previous</span>
+                                </a>
+                                <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+                                    <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+                                    <span class="sr-only">Next</span>
+                                </a>
+                            </div>
+                        </div>
+                    </section>
+                    <hr>
+                    <h3 style="font-family: 'Bauhaus 93'; text-align: center">- - - - MOVIES - - - -</h3>
+                    <br>
+                    <div class="btn-group btn-group-justified">
+                        <a href="#" class="btn btn-success">NOW SHOWING</a>
+                        <a href="#" class="btn btn-primary">COMING SOON</a>
+                    </div>
+                    <br>
+                    <div class="col-md-4">
+                        <input type="text" placeholder="Search for Movies" class="form-control">
+                        <br>
+                        <img src="img/m1.jpg" alt="Pulpit Rock" style="width:150px;height:200px">
+                        <img src="img/m2.jpg" alt="Pulpit Rock" style="width:150px;height:200px">
+                        <img src="img/m3.png" alt="Pulpit Rock" style="width:150px;height:200px">
+                    </div>
+                    <hr>
+                    <div class="btn-group btn-group-justified">
+                        <a href="#" class="btn btn-danger">BOOK TICKETS</a>
+                    </div>
+                    <div class="col-md-4"></div>
+                    <div class="col-md-4"></div>
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<script src="js/bootstrap.min.js"></script>
+<footer class="bg-danger"></footer>
+</body>
+</html>

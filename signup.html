@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Midterm Exam</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <script src="js/jquery-2.1.1.min.js"></script>
+    <script src="https://cdn.firebase.com/js/client/2.3.2/firebase.js"></script>
+</head>
+<body>
+
+<body>
+<nav class="navbar navbar-inverse">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#">iMovies</a>
+
+        </div>
+        <div class="collapse navbar-collapse" id="myNavbar">
+            <ul class="nav navbar-nav">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="#">Browse Movies</a></li>
+                <li><a href="ticketreservation.html">Ticket Reservation</a></li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+                <li class="active"><a href="signup.html"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+                <li><a href="login.html"><span class="glyphicon glyphicon-log-in"></span> Logout</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-lg-8">
+            <div class="row">
+                <div class="col-md-6"></div>
+                <div class="col-md-6">
+                    <section class="panel">
+                        <div class="panel-body">
+                            <form>
+                                <h2 style="font-family: 'Bauhaus 93'">Sign Up</h2>
+                                <hr>
+                                <label>Firstname</label>
+                                <input type="text" class="form-control" id="fname" placeholder="Firstname" required="required">
+                                <br>
+                                <label>Middlename</label>
+                                <input type="text" class="form-control" id="mname" placeholder="Middlename" required="required">
+                                <br>
+                                <label>Lastname</label>
+                                <input type="text" class="form-control" id="lname" placeholder="Lastname" required="required">
+                                <br>
+                                <label>Gender</label>
+                                <select class="form-control" input type="text" id="gender" required="required">
+                                    <option value="" disabled="disabled" selected="selected" >Please select gender..</option>
+                                    <option value="Male" >Male</option>
+                                    <option value="Female">Female</option>
+                                </select>
+                                <br>
+                                <label>Address</label>
+                                <input type="text" class="form-control" id="address" placeholder="Address" required="required">
+                                <br>
+                                <label>Username</label>
+                                <input type="text" class="form-control" id="uname" placeholder="Username" required="required">
+                                <br>
+                                <label>Password</label>
+                                <input type="password" class="form-control" id="pword" placeholder="Password" required="required">
+                                <br>
+                                <div style="text-align: right">
+                                    <button type="cancel" class="btn btn-danger">Cancel</button>
+                                    <button type="submit" id="btnSubmit" class="btn btn-primary" onclick="submitPost();">Submit</button>
+                                </div>
+                            </form>
+
+
+                        </div>
+                    </section>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<script>
+    var myFirebase = new Firebase("https://imoviesapp.firebaseio.com/");
+    var	targetChildRef = myFirebase.child('storageList');
+
+    function submitPost(e) {
+        var _fname = $('#fname').val();
+        var _lname = $('#lname').val();
+        var _mname = $('#mname').val();
+        var _uname = $('#uname').val();
+        var _address = $('#address').val();
+        var _pass = $('#pword').val();
+        var _gender = $('#gender').val();
+        targetChildRef.push({
+            Firstname: _fname,
+            Middlename: _mname,
+            Lastname: _lname,
+            Gender: _gender,
+            Address: _address,
+            Username: _uname,
+            Pass: _pass
+        });
+        $('#fname').val('');
+        $('#lname').val('');
+        $('#mname').val('');
+        $('#gender').val('');
+        $('#address').val('');
+        $('#uname').val('');
+        $('#pword').val('');
+        e.preventDefault();
+    }
+</script>
+<script src="js/bootstrap.min.js"></script>
+</body>
+</html>
